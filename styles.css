@@ -130,7 +130,7 @@ body {
     right: -15%;
     width: 120%;
     z-index: 10; /* Higher than the video z-index */
-    background: rgba(0, 0, 0, 0.9); /* Darker background for better visibility */
+    background: rgba(0, 0, 0, 0.7); /* Darker background for better visibility */
 }
 
 .expand-btn {
