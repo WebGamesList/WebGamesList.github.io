@@ -2,7 +2,7 @@ const gamesData = {
     featured: {
         title: "Space Explorer",
         description: "Embark on an epic journey through the cosmos in this groundbreaking browser game",
-        videoUrl: "https://samplelib.com/lib/preview/mp4/sample-5s.mp4",
+        videoUrl: "https://webgameslist.github.io/vids/deerhunter.mp4",
         gameUrl: "#"
     },
     categories: [
