@@ -78,7 +78,7 @@ body {
 
 .game-card:hover {
     transform: scale(1.1);
-    z-index: 10; /* Higher z-index to ensure it stays on top */
+    z-index: 2;
 }
 
 .game-card img {
@@ -96,27 +96,19 @@ body {
     border-radius: 4px;
 }
 
-.game-card:hover img {
-    display: none;
-}
-
-/* Create a container for the expanded content */
-.game-card:hover .expanded-content {
-    position: absolute;
-    width: 130%;
-    top: -15%;
-    left: -15%;
-    z-index: 5;
-    display: flex;
-    flex-direction: column;
-}
-
 .game-card:hover video {
     display: block;
-    width: 100%; 
-    height: auto;
-    border-radius: 4px 4px 0 0;
+    width: 120%; /* Increased by 30% */
+    height: 120%; /* Increased by 30% */
+    position: absolute;
+    top: -15%; /* Center the enlarged video */
+    left: -15%; /* Center the enlarged video */
     z-index: 3;
+    border-radius: 4px 4px 0 0; /* Remove bottom radius to match with info panel */
+}
+
+.game-card:hover img {
+    display: none;
 }
 
 .game-info {
@@ -133,15 +125,12 @@ body {
 
 .game-card:hover .game-info {
     opacity: 1;
-    position: relative; /* Change to relative positioning */
     bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    z-index: 4;
-    background: rgba(0, 0, 0, 0.9);
-    border-radius: 0 0 4px 4px;
-    margin-top: -4px; /* Small negative margin to avoid any gap */
+    left: -15%;
+    right: -15%;
+    width: 120%;
+    z-index: 10; /* Higher than the video z-index */
+    background: rgba(0, 0, 0, 0.9); /* Darker background for better visibility */
 }
 
 .expand-btn {
