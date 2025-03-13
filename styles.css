@@ -98,8 +98,8 @@ body {
 
 .game-card:hover video {
     display: block;
-    width: 120%; /* Increased by 30% */
-    height: 120%; /* Increased by 30% */
+    width: 120%; /* Increased by 20% */
+    height: 120%; /* Increased by 20% */
     position: absolute;
     top: -15%; /* Center the enlarged video */
     left: -15%; /* Center the enlarged video */
@@ -125,7 +125,7 @@ body {
 
 .game-card:hover .game-info {
     opacity: 1;
-    bottom: 0;
+    bottom: -5%; /* Adjusted to account for 120% height video */
     left: -15%;
     right: -15%;
     width: 120%;
