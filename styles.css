@@ -96,12 +96,18 @@ body {
     border-radius: 4px;
 }
 
-.game-card:hover img {
-    display: none;
-}
-
 .game-card:hover video {
     display: block;
+    width: 130%; /* Increased by 30% */
+    height: 130%; /* Increased by 30% */
+    position: absolute;
+    top: -15%; /* Center the enlarged video */
+    left: -15%; /* Center the enlarged video */
+    z-index: 3;
+}
+
+.game-card:hover img {
+    display: none;
 }
 
 .game-info {
