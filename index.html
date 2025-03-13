@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Browser</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <video id="hero-video" autoplay muted loop>
+            <source src="https://assets.codepen.io/t-1/flower.webm" type="video/webm">
+            <!-- Using a sample video URL. Replace with your actual hero video -->
+        </video>
+        <div class="hero-content">
+            <h1>Featured Game</h1>
+            <p>Experience this amazing browser-based adventure game!</p>
+            <button onclick="window.open('#', '_blank')" class="play-btn">Play Now</button>
+        </div>
+    </div>
+
+    <!-- Game Categories -->
+    <div class="categories">
+        <!-- Action Games Row -->
+        <div class="category">
+            <h2>Action Games</h2>
+            <div class="game-row">
+                <!-- Games will be inserted here by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Puzzle Games Row -->
+        <div class="category">
+            <h2>Puzzle Games</h2>
+            <div class="game-row">
+                <!-- Games will be inserted here by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Adventure Games Row -->
+        <div class="category">
+            <h2>Adventure Games</h2>
+            <div class="game-row">
+                <!-- Games will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Preview Modal -->
+    <div id="preview-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <video id="modal-video" muted loop>
+                <source src="" type="video/webm">
+            </video>
+            <div class="modal-info">
+                <h2></h2>
+                <p></p>
+                <button class="play-btn">Play Now</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

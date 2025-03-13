@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #141414;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 80vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: absolute;
+    bottom: 20%;
+    left: 5%;
+    max-width: 500px;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+
+.play-btn {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background: #e50914;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1em;
+}
+
+/* Categories Section */
+.categories {
+    padding: 20px 40px;
+}
+
+.category {
+    margin-bottom: 40px;
+}
+
+.category h2 {
+    margin-bottom: 20px;
+}
+
+.game-row {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 20px 0;
+}
+
+/* Game Card */
+.game-card {
+    flex: 0 0 300px;
+    position: relative;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.game-card:hover {
+    transform: scale(1.1);
+    z-index: 2;
+}
+
+.game-card img {
+    width: 100%;
+    height: 169px; /* 16:9 ratio */
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.game-card video {
+    display: none;
+    width: 100%;
+    height: 169px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.game-card:hover img {
+    display: none;
+}
+
+.game-card:hover video {
+    display: block;
+}
+
+.game-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 0 0 4px 4px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.game-card:hover .game-info {
+    opacity: 1;
+}
+
+.expand-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    color: white;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto;
+    background: #181818;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.modal video {
+    width: 100%;
+    height: auto;
+}
+
+.modal-info {
+    padding: 20px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #141414;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
