@@ -1,9 +1,9 @@
 const gamesData = {
     featured: {
-        title: "Space Explorer",
-        description: "Embark on an epic journey through the cosmos in this groundbreaking browser game",
+        title: "Deerhunt Royale",
+        description: "Take a relaxing stross through the rolling hills of windows xp and snipe some deer",
         videoUrl: "https://webgameslist.github.io/vids/deerhunter.mp4",
-        gameUrl: "#"
+        gameUrl: "http://deerhunroyale.com"
     },
     categories: [
         {
