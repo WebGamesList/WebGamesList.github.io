@@ -10,17 +10,17 @@ const gamesData = {
             name: "Action Games",
             games: [
                 {
-                    title: "Cyber Assault",
-                    description: "Fast-paced cyberpunk action game",
+                    title: "Deerhunt Royale",
+                    description: "3D deer hunting game",
                     thumbnailUrl: "https://picsum.photos/300/169?random=1",
-                    videoUrl: "https://samplelib.com/lib/preview/mp4/sample-5s.mp4",
+                    videoUrl: "https://webgameslist.github.io/vids/deerhunter.mp4",
                     gameUrl: "#"
                 },
                 {
-                    title: "Space Warriors",
-                    description: "Epic space combat simulation",
+                    title: "Fly Pieter",
+                    description: "Flight sim",
                     thumbnailUrl: "https://picsum.photos/300/169?random=2",
-                    videoUrl: "https://samplelib.com/lib/preview/mp4/sample-5s.mp4",
+                    videoUrl: "https://webgameslist.github.io/vids/flypieter.mp4",
                     gameUrl: "#"
                 },
                 {
