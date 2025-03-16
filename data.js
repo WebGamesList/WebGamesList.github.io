@@ -3,7 +3,7 @@ const gamesData = {
         title: "Deerhunt Royale",
         description: "Take a relaxing stross through the rolling hills of windows xp and snipe some deer",
         videoUrl: "https://webgameslist.github.io/vids/deerhunter.mp4",
-        gameUrl: "#"
+        gameUrl: "http://www.deerhuntroyale.com/"
     },
     categories: [
         {
@@ -14,7 +14,7 @@ const gamesData = {
                     description: "3D deer hunting game",
                     thumbnailUrl: "https://webgameslist.github.io/deerhunt.png",
                     videoUrl: "https://webgameslist.github.io/vids/deerhunter.mp4",
-                    gameUrl: "#"
+                    gameUrl: "http://www.deerhuntroyale.com/"
                 },
                 {
                     title: "Fly Levels",
