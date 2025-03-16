@@ -21,7 +21,7 @@ const gamesData = {
                     description: "Flight sim by Pieter Levels (.io)",
                     thumbnailUrl: "https://webgameslist.github.io/flylevels.png",
                     videoUrl: "https://webgameslist.github.io/vids/flylevels.mp4",
-                    gameUrl: "#"
+                    gameUrl: "https://fly.pieter.com/"
                 },
                 {
                     title: "Ninja Rush",
