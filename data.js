@@ -12,7 +12,7 @@ const gamesData = {
                 {
                     title: "Deerhunt Royale",
                     description: "3D deer hunting game",
-                    thumbnailUrl: "https://picsum.photos/300/169?random=1",
+                    thumbnailUrl: "https://webgameslist.github.io/deerhunt.png",
                     videoUrl: "https://webgameslist.github.io/vids/deerhunter.mp4",
                     gameUrl: "#"
                 },
