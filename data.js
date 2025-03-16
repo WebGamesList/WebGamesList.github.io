@@ -17,10 +17,10 @@ const gamesData = {
                     gameUrl: "#"
                 },
                 {
-                    title: "Fly Pieter",
-                    description: "Flight sim",
+                    title: "Fly Levels",
+                    description: "Flight sim by Pieter Levels (.io)",
                     thumbnailUrl: "https://picsum.photos/300/169?random=2",
-                    videoUrl: "https://webgameslist.github.io/vids/flypieter.mp4",
+                    videoUrl: "https://webgameslist.github.io/vids/flylevels.mp4",
                     gameUrl: "#"
                 },
                 {
