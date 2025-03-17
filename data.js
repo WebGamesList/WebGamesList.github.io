@@ -45,7 +45,7 @@ const gamesData = {
                 {
                     title: "Fly TiniBoost",
                     description: "Fly as a bird in this chilled Three.js game built entirely with AI vibe coding",
-                    thumbnailUrl: "https://webgameslist.github.io/flytini.mp4",
+                    thumbnailUrl: "https://webgameslist.github.io/flytini.png",
                     videoUrl: "https://webgameslist.github.io/vids/flytini.mp4",
                     gameUrl: "https://fly.tiniboost.site/?utm_source=chrome3Dgames&utm_medium=referral&utm_campaign=FREETRIAL"
                 },
