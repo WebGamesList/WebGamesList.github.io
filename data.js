@@ -24,11 +24,11 @@ const gamesData = {
                     gameUrl: "https://fly.pieter.com/?utm_source=chrome3Dgames&utm_medium=referral&utm_campaign=FREETRIAL"
                 },
                 {
-                    title: "Ninja Rush",
-                    description: "Stealth action platformer",
-                    thumbnailUrl: "https://picsum.photos/300/169?random=3",
-                    videoUrl: "https://samplelib.com/lib/preview/mp4/sample-5s.mp4",
-                    gameUrl: "#"
+                    title: "Vibe Sail",
+                    description: "Relaxing Online 3D Sailing Simulator",
+                    thumbnailUrl: "https://webgameslist.github.io/vibesail.png",
+                    videoUrl: "https://webgameslist.github.io/vids/vibesail.mp4",
+                    gameUrl: "https://www.vibesail.com/?utm_source=chrome3Dgames&utm_medium=referral&utm_campaign=FREETRIAL"
                 }
             ]
         },
