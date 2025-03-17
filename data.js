@@ -50,11 +50,11 @@ const gamesData = {
                     gameUrl: "https://fly.tiniboost.site/?utm_source=chrome3Dgames&utm_medium=referral&utm_campaign=FREETRIAL"
                 },
                 {
-                    title: "Logic Master",
-                    description: "Test your logical thinking",
-                    thumbnailUrl: "https://picsum.photos/300/169?random=6",
-                    videoUrl: "https://samplelib.com/lib/preview/mp4/sample-5s.mp4",
-                    gameUrl: "#"
+                    title: "Planetary",
+                    description: "explore the galaxy",
+                    thumbnailUrl: "https://webgameslist.github.io/planetary.png",
+                    videoUrl: "https://webgameslist.github.io/vids/planetary.mp4",
+                    gameUrl: "https://magnificent-zabaione-675839.netlify.app/?utm_source=chrome3Dgames&utm_medium=referral&utm_campaign=FREETRIAL"
                 }
             ]
         },
