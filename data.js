@@ -59,14 +59,21 @@ const gamesData = {
             ]
         },
         {
-            name: "Adventure Games",
+            name: "Racing Sims",
             games: [
                 {
-                    title: "Lost Temple",
-                    description: "Explore ancient ruins and solve mysteries",
-                    thumbnailUrl: "https://picsum.photos/300/169?random=7",
-                    videoUrl: "https://samplelib.com/lib/preview/mp4/sample-5s.mp4",
-                    gameUrl: "#"
+                    title: "Slow Roads",
+                    description: "endless driving zen",
+                    thumbnailUrl: "https://webgameslist.github.io/slowroads.png",
+                    videoUrl: "https://webgameslist.github.io/vids/slowroads.mp4",
+                    gameUrl: "https://www.slowroads.io/?utm_source=chrome3Dgames&utm_medium=referral&utm_campaign=FREETRIAL"
+                },
+                {
+                    title: "Sunset Race",
+                    description: "Fast-paced, neon-lit car game inspired by 90s arcade classics",
+                    thumbnailUrl: "https://webgameslist.github.io/sunsetrace.png",
+                    videoUrl: "https://webgameslist.github.io/vids/sunset.mp4",
+                    gameUrl: "https://sunsetrace.ginrin.com/"
                 },
                 {
                     title: "Ocean Explorer",
