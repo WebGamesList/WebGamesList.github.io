@@ -73,7 +73,7 @@ const gamesData = {
                     description: "Fast-paced, neon-lit car game inspired by 90s arcade classics",
                     thumbnailUrl: "https://webgameslist.github.io/sunsetrace.png",
                     videoUrl: "https://webgameslist.github.io/vids/sunset.mp4",
-                    gameUrl: "https://sunsetrace.ginrin.com/"
+                    gameUrl: "https://sunsetrace.ginrin.com/?utm_source=chrome3Dgames&utm_medium=referral&utm_campaign=FREETRIAL"
                 },
                 {
                     title: "Ocean Explorer",
