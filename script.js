@@ -72,6 +72,19 @@ document.querySelector('.close-modal').addEventListener('click', () => {
     video.currentTime = 0;
 });
 
+// Close modal with Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        const modal = document.getElementById('preview-modal');
+        const video = modal.querySelector('video');
+        if (modal.style.display === 'block') {
+            modal.style.display = 'none';
+            video.pause();
+            video.currentTime = 0;
+        }
+    }
+});
+
 // Populate game rows
 gamesData.categories.forEach(category => {
     const categoryElement = Array.from(document.querySelectorAll('.category'))
