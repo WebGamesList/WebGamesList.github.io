@@ -66,6 +66,7 @@ body {
     overflow-x: auto;
     gap: 10px;
     padding: 20px 0;
+    padding-left: 0;
 }
 
 /* Game Card */
@@ -98,13 +99,19 @@ body {
 
 .game-card:hover video {
     display: block;
-    width: 120%; /* Increased by 20% */
-    height: 120%; /* Increased by 20% */
+    width: 120%;
+    height: 120%;
     position: absolute;
-    top: -15%; /* Center the enlarged video */
-    left: -15%; /* Center the enlarged video */
+    top: -15%;
+    left: -15%;
     z-index: 3;
-    border-radius: 4px 4px 0 0; /* Remove bottom radius to match with info panel */
+    border-radius: 4px 4px 0 0;
+}
+
+/* Special case for first card in row */
+.game-row .game-card:first-child:hover video {
+    left: 0;
+    width: 130%; /* Match the info panel width */
 }
 
 .game-card:hover img {
@@ -121,16 +128,26 @@ body {
     border-radius: 0 0 4px 4px;
     opacity: 0;
     transition: opacity 0.3s ease;
+    white-space: normal;
+    word-wrap: break-word;
 }
 
 .game-card:hover .game-info {
     opacity: 1;
-    bottom: -5%; /* Adjusted to account for 120% height video */
+    bottom: -5%;
     left: -15%;
     right: -15%;
     width: 120%;
-    z-index: 10; /* Higher than the video z-index */
-    background: rgba(0, 0, 0, 0.7); /* Darker background for better visibility */
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* Special case for first card info panel */
+.game-row .game-card:first-child:hover .game-info {
+    left: 0;
+    right: -30%;
+    width: 130%;
+    padding-left: 25px; /* Increased padding for better text alignment */
 }
 
 .expand-btn {

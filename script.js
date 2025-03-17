@@ -3,6 +3,7 @@ const heroVideo = document.getElementById('hero-video');
 heroVideo.src = gamesData.featured.videoUrl;
 document.querySelector('.hero-content h1').textContent = gamesData.featured.title;
 document.querySelector('.hero-content p').textContent = gamesData.featured.description;
+document.querySelector('.hero-content .play-btn').onclick = () => window.open(gamesData.featured.gameUrl, '_blank');
 
 // Initialize game rows
 function createGameCard(game) {
