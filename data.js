@@ -3,7 +3,7 @@ const gamesData = {
         title: "Deerhunt Royale",
         description: "Take a relaxing stross through the rolling hills of windows xp and snipe some deer",
         videoUrl: "https://webgameslist.github.io/vids/deerhunter.mp4",
-        gameUrl: "http://www.deerhuntroyale.com/"
+        gameUrl: "http://www.deerhuntroyale.com/?utm_source=chrome3Dgames&utm_medium=referral&utm_campaign=FREETRIAL"
     },
     categories: [
         {
@@ -14,14 +14,14 @@ const gamesData = {
                     description: "3D deer hunting game",
                     thumbnailUrl: "https://webgameslist.github.io/deerhunt.png",
                     videoUrl: "https://webgameslist.github.io/vids/deerhunter.mp4",
-                    gameUrl: "http://www.deerhuntroyale.com/"
+                    gameUrl: "http://www.deerhuntroyale.com/?utm_source=chrome3Dgames&utm_medium=referral&utm_campaign=FREETRIAL"
                 },
                 {
                     title: "Fly Levels",
                     description: "Flight sim by Pieter Levels (.io)",
                     thumbnailUrl: "https://webgameslist.github.io/flylevels.png",
                     videoUrl: "https://webgameslist.github.io/vids/flylevels.mp4",
-                    gameUrl: "https://fly.pieter.com/"
+                    gameUrl: "https://fly.pieter.com/?utm_source=chrome3Dgames&utm_medium=referral&utm_campaign=FREETRIAL"
                 },
                 {
                     title: "Ninja Rush",
