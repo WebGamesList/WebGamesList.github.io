@@ -33,14 +33,14 @@ const gamesData = {
             ]
         },
         {
-            name: "Puzzle Games",
+            name: "Simulation Games",
             games: [
                 {
-                    title: "Mind Bender",
-                    description: "Challenge your brain with complex puzzles",
-                    thumbnailUrl: "https://picsum.photos/300/169?random=4",
-                    videoUrl: "https://samplelib.com/lib/preview/mp4/sample-5s.mp4",
-                    gameUrl: "#"
+                    title: "Slow Roads",
+                    description: "endless driving zen",
+                    thumbnailUrl: "https://webgameslist.github.io/slowroads.png",
+                    videoUrl: "https://webgameslist.github.io/vids/slowroads.mp4",
+                    gameUrl: "https://www.slowroads.io/?utm_source=chrome3Dgames&utm_medium=referral&utm_campaign=FREETRIAL"
                 },
                 {
                     title: "Color Match",
