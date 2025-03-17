@@ -43,11 +43,11 @@ const gamesData = {
                     gameUrl: "https://www.slowroads.io/?utm_source=chrome3Dgames&utm_medium=referral&utm_campaign=FREETRIAL"
                 },
                 {
-                    title: "Color Match",
-                    description: "Fast-paced color matching puzzle",
-                    thumbnailUrl: "https://picsum.photos/300/169?random=5",
-                    videoUrl: "https://samplelib.com/lib/preview/mp4/sample-5s.mp4",
-                    gameUrl: "#"
+                    title: "Fly TiniBoost",
+                    description: "Fly as a bird in this chilled Three.js game built entirely with AI vibe coding",
+                    thumbnailUrl: "https://webgameslist.github.io/flytini.mp4",
+                    videoUrl: "https://webgameslist.github.io/vids/flytini.mp4",
+                    gameUrl: "https://fly.tiniboost.site/?utm_source=chrome3Dgames&utm_medium=referral&utm_campaign=FREETRIAL"
                 },
                 {
                     title: "Logic Master",
