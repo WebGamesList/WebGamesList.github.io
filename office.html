@@ -504,6 +504,15 @@
             'D18': '=SUM(D15:D17)',
         };
         
+        // Identify headings and number cells
+        const headings = ['A4', 'B4', 'C4', 'D4', 'E4', 'A9', 'B9', 'C9', 'D9', 'E9', 'F9', 'A12', 'A14', 'B14', 'C14', 'D14', 'E14', 'A18', 'B18', 'C18', 'D18'];
+        const isNumber = cellId => {
+            if (!sampleData[cellId]) return false;
+            // Check if the content starts with a number or is a formula result
+            const content = sampleData[cellId];
+            return /^[0-9,\.-]/.test(content) || content.startsWith('=');
+        };
+        
         // Calculate how many rows and columns will fill the screen
         const viewportHeight = window.innerHeight;
         const viewportWidth = window.innerWidth;
@@ -541,6 +550,15 @@
                 // Add data if this cell has sample data
                 if (sampleData[cellId]) {
                     cell.textContent = sampleData[cellId];
+                    
+                    // Add appropriate classes for styling
+                    if (headings.includes(cellId)) {
+                        cell.classList.add('heading');
+                    }
+                    
+                    if (isNumber(cellId)) {
+                        cell.classList.add('number');
+                    }
                     
                     // Style formula cells
                     if (sampleData[cellId].toString().startsWith('=')) {
@@ -588,10 +606,7 @@
                         cell.title = sampleData[cellId]; // Show formula on hover
                     }
                     
-                    // Style cells
-                    if (i === 4 || i === 9 || i === 12 || i === 14 || i === 18) {
-                        cell.style.fontWeight = 'bold';
-                    }
+                    // Style cells with borders for visual sections
                     if (i === 9 || i === 18) {
                         cell.style.borderTop = '1px solid #999';
                     }
