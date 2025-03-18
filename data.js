@@ -7,7 +7,7 @@ const gamesData = {
     },
     categories: [
         {
-            name: "Action Games",
+            name: "Recommended Games",
             games: [
                 {
                     title: "Deerhunt Royale",
@@ -33,14 +33,14 @@ const gamesData = {
             ]
         },
         {
-            name: "Simulation Games",
+            name: "Flight Sims",
             games: [
                 {
-                    title: "Slow Roads",
-                    description: "endless driving zen",
-                    thumbnailUrl: "https://webgameslist.github.io/slowroads.png",
-                    videoUrl: "https://webgameslist.github.io/vids/slowroads.mp4",
-                    gameUrl: "https://www.slowroads.io/?utm_source=chrome3Dgames&utm_medium=referral&utm_campaign=FREETRIAL"
+                    title: "Fly Levels",
+                    description: "Flight sim by Pieter Levels (.io)",
+                    thumbnailUrl: "https://webgameslist.github.io/flylevels.png",
+                    videoUrl: "https://webgameslist.github.io/vids/flylevels.mp4",
+                    gameUrl: "https://fly.pieter.com/?utm_source=chrome3Dgames&utm_medium=referral&utm_campaign=FREETRIAL"
                 },
                 {
                     title: "Fly TiniBoost",
@@ -55,6 +55,13 @@ const gamesData = {
                     thumbnailUrl: "https://webgameslist.github.io/planetary.png",
                     videoUrl: "https://webgameslist.github.io/vids/planetary.mp4",
                     gameUrl: "https://magnificent-zabaione-675839.netlify.app/?utm_source=chrome3Dgames&utm_medium=referral&utm_campaign=FREETRIAL"
+                },
+                {
+                    title: "Stars",
+                    description: "TIE-fighter shooter",
+                    thumbnailUrl: "https://webgameslist.github.io/stars.png",
+                    videoUrl: "https://webgameslist.github.io/vids/stars.mp4",
+                    gameUrl: "https://chrome3dgames.com/Stars/?utm_source=chrome3Dgames&utm_medium=referral&utm_campaign=FREETRIAL"
                 }
             ]
         },
