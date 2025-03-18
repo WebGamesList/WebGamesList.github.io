@@ -96,24 +96,48 @@
         .ribbon-content {
             display: flex;
             padding: 4px 16px;
+            height: 60px;
         }
         
         .ribbon-group {
             border-right: 1px solid #e1dfdd;
-            padding: 4px 12px;
-            min-width: 80px;
-            text-align: center;
+            padding: 4px 6px;
+            min-width: 70px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         
         .ribbon-group-title {
             font-size: 11px;
-            margin-top: 4px;
             color: #605e5c;
+            text-align: center;
+            margin-top: auto;
+        }
+        
+        .ribbon-button-row {
+            display: flex;
+            justify-content: center;
         }
         
         .ribbon-button {
-            font-size: 20px;
-            margin: 4px;
+            width: 22px;
+            height: 22px;
+            margin: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+        
+        .ribbon-button:hover {
+            background: #f3f2f1;
+        }
+        
+        .icon {
+            font-size: 12px;
             color: #605e5c;
         }
         
@@ -211,6 +235,24 @@
             height: 24px;
             border-right: 1px solid #e1dfdd;
             border-bottom: 1px solid #e1dfdd;
+            padding: 0 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+        }
+        
+        /* Text alignment defaults */
+        .grid-cell {
+            justify-content: flex-start; /* Left align by default */
+        }
+        .grid-cell.number {
+            justify-content: flex-end; /* Right align numbers */
+        }
+        .grid-cell.heading {
+            font-weight: bold;
         }
         
         /* Game container */
@@ -288,20 +330,71 @@
         </div>
         <div class="ribbon-content">
             <div class="ribbon-group">
-                <div class="ribbon-button">B</div>
+                <div class="ribbon-button-row">
+                    <div class="ribbon-button"><span class="icon">📋</span></div>
+                    <div class="ribbon-button"><span class="icon">✂️</span></div>
+                    <div class="ribbon-button"><span class="icon">📄</span></div>
+                </div>
                 <div class="ribbon-group-title">Clipboard</div>
             </div>
             <div class="ribbon-group">
-                <div class="ribbon-button">A</div>
+                <div class="ribbon-button-row">
+                    <div class="ribbon-button"><span class="icon">𝐁</span></div>
+                    <div class="ribbon-button"><span class="icon"><i>I</i></span></div>
+                    <div class="ribbon-button"><span class="icon"><u>U</u></span></div>
+                </div>
+                <div class="ribbon-button-row">
+                    <div class="ribbon-button"><span class="icon">A</span></div>
+                    <div class="ribbon-button"><span class="icon">🎨</span></div>
+                    <div class="ribbon-button"><span class="icon">📏</span></div>
+                </div>
                 <div class="ribbon-group-title">Font</div>
             </div>
             <div class="ribbon-group">
-                <div class="ribbon-button">$</div>
+                <div class="ribbon-button-row">
+                    <div class="ribbon-button"><span class="icon">$</span></div>
+                    <div class="ribbon-button"><span class="icon">%</span></div>
+                    <div class="ribbon-button"><span class="icon">,</span></div>
+                </div>
+                <div class="ribbon-button-row">
+                    <div class="ribbon-button"><span class="icon">+.0</span></div>
+                    <div class="ribbon-button"><span class="icon">-.0</span></div>
+                </div>
                 <div class="ribbon-group-title">Number</div>
             </div>
             <div class="ribbon-group">
-                <div class="ribbon-button">=</div>
+                <div class="ribbon-button-row">
+                    <div class="ribbon-button"><span class="icon">⬅️</span></div>
+                    <div class="ribbon-button"><span class="icon">⬆️</span></div>
+                    <div class="ribbon-button"><span class="icon">⬇️</span></div>
+                </div>
+                <div class="ribbon-button-row">
+                    <div class="ribbon-button"><span class="icon">📊</span></div>
+                    <div class="ribbon-button"><span class="icon">🔄</span></div>
+                </div>
+                <div class="ribbon-group-title">Cells</div>
+            </div>
+            <div class="ribbon-group">
+                <div class="ribbon-button-row">
+                    <div class="ribbon-button"><span class="icon" style="font-size: 14px">=</span></div>
+                    <div class="ribbon-button"><span class="icon" style="font-size: 14px">∑</span></div>
+                </div>
+                <div class="ribbon-button-row">
+                    <div class="ribbon-button"><span class="icon" style="font-size: 14px">fx</span></div>
+                    <div class="ribbon-button"><span class="icon" style="font-size: 10px">IF</span></div>
+                </div>
                 <div class="ribbon-group-title">Formulas</div>
+            </div>
+            <div class="ribbon-group">
+                <div class="ribbon-button-row">
+                    <div class="ribbon-button"><span class="icon">🔍</span></div>
+                    <div class="ribbon-button"><span class="icon">🗂️</span></div>
+                </div>
+                <div class="ribbon-button-row">
+                    <div class="ribbon-button"><span class="icon">↕️</span></div>
+                    <div class="ribbon-button"><span class="icon">🗑️</span></div>
+                </div>
+                <div class="ribbon-group-title">Find & Select</div>
             </div>
         </div>
     </div>
