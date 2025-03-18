@@ -62,6 +62,13 @@ function setupPageFromUrl() {
             backBtn.onclick = () => window.location.href = window.location.pathname;
             document.querySelector('.hero-content').appendChild(backBtn);
             
+            // Add office mode button
+            const officeBtn = document.createElement('button');
+            officeBtn.className = 'office-btn';
+            officeBtn.textContent = 'Play in Office Mode';
+            officeBtn.onclick = () => window.open(`office.html?game=${params.game}`, '_blank');
+            document.querySelector('.hero-content').appendChild(officeBtn);
+            
             // Update page title
             document.title = `${game.title} - Free 3D Game Preview`;
             
@@ -149,6 +156,15 @@ function openModal(game) {
             });
         };
         modal.querySelector('.modal-info').appendChild(shareBtn);
+    }
+    
+    // Add office mode button if not already there
+    if (!modal.querySelector('.office-btn')) {
+        const officeBtn = document.createElement('button');
+        officeBtn.className = 'office-btn';
+        officeBtn.textContent = 'Play in Office Mode';
+        officeBtn.onclick = () => window.open(`office.html?game=${gameId}`, '_blank');
+        modal.querySelector('.modal-info').appendChild(officeBtn);
     }
 
     video.src = game.videoUrl;

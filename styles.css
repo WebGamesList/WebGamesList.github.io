@@ -58,6 +58,19 @@ body {
     border-radius: 4px;
     cursor: pointer;
     margin-top: 1em;
+    margin-right: 10px;
+}
+
+.office-btn {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background: #107c41; /* Excel green */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1em;
+    margin-right: 10px;
 }
 
 .share-btn {
@@ -236,6 +249,13 @@ body.preview-mode .hero {
     font-size: 30px;
     cursor: pointer;
     z-index: 1001;
+}
+
+/* Add office button to modal */
+.modal-info .office-btn {
+    font-size: 1em;
+    margin-top: 0;
+    margin-left: 10px;
 }
 
 /* Scrollbar Styling */

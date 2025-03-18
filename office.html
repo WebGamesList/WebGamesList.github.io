@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Online - Document1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: #f3f2f1;
+            overflow: hidden;
+            height: 100vh;
+        }
+        
+        /* Header */
+        .header {
+            background: linear-gradient(to right, #107c41, #185c37);
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 4px 16px;
+            height: 48px;
+        }
+        
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+        
+        .excel-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            background: #107c41;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            border-radius: 2px;
+        }
+        
+        .document-title {
+            font-size: 14px;
+            margin-right: 20px;
+        }
+        
+        .header-right {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+        }
+        
+        .user-icon {
+            width: 32px;
+            height: 32px;
+            background: #d83b01;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        /* Ribbon */
+        .ribbon {
+            background: white;
+            border-bottom: 1px solid #e1dfdd;
+            height: 92px;
+            padding: 4px 0;
+        }
+        
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #e1dfdd;
+            padding-left: 16px;
+        }
+        
+        .tab {
+            padding: 8px 12px;
+            cursor: pointer;
+            font-size: 13px;
+        }
+        
+        .tab.active {
+            border-bottom: 2px solid #217346;
+        }
+        
+        .ribbon-content {
+            display: flex;
+            padding: 4px 16px;
+        }
+        
+        .ribbon-group {
+            border-right: 1px solid #e1dfdd;
+            padding: 4px 12px;
+            min-width: 80px;
+            text-align: center;
+        }
+        
+        .ribbon-group-title {
+            font-size: 11px;
+            margin-top: 4px;
+            color: #605e5c;
+        }
+        
+        .ribbon-button {
+            font-size: 20px;
+            margin: 4px;
+            color: #605e5c;
+        }
+        
+        /* Spreadsheet */
+        .spreadsheet {
+            display: flex;
+            flex-direction: column;
+            height: calc(100vh - 140px); /* Full height minus header and ribbon */
+            position: relative;
+        }
+        
+        .formula-bar {
+            height: 24px;
+            border-bottom: 1px solid #e1dfdd;
+            display: flex;
+            align-items: center;
+            padding: 0 4px;
+            background: white;
+        }
+        
+        .formula-label {
+            width: 30px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 14px;
+            color: #605e5c;
+        }
+        
+        .formula-input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 0 4px;
+        }
+        
+        .spreadsheet-grid {
+            flex: 1;
+            overflow: hidden;
+            background: white;
+            position: relative;
+        }
+        
+        .column-headers {
+            display: flex;
+            border-bottom: 1px solid #e1dfdd;
+            height: 24px;
+        }
+        
+        .row-headers {
+            position: absolute;
+            top: 25px;
+            left: 0;
+            width: 40px;
+            bottom: 0;
+            border-right: 1px solid #e1dfdd;
+            overflow: hidden;
+        }
+        
+        .column-header, .row-header {
+            width: 64px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #605e5c;
+            border-right: 1px solid #e1dfdd;
+        }
+        
+        .row-header {
+            width: 40px;
+            border-bottom: 1px solid #e1dfdd;
+        }
+        
+        .column-headers {
+            margin-left: 40px; /* Width of row headers */
+        }
+        
+        .grid-cells {
+            position: absolute;
+            top: 25px; /* Height of column headers */
+            left: 41px; /* Width of row headers + 1px border */
+            right: 0;
+            bottom: 0;
+            overflow: auto;
+        }
+        
+        .grid-row {
+            display: flex;
+            height: 24px;
+        }
+        
+        .grid-cell {
+            width: 64px;
+            height: 24px;
+            border-right: 1px solid #e1dfdd;
+            border-bottom: 1px solid #e1dfdd;
+        }
+        
+        /* Game container */
+        .game-container {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50%;
+            height: 50%;
+            border: 1px solid #e1dfdd;
+            background: white;
+            z-index: 10;
+            overflow: hidden;
+        }
+        
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Status bar */
+        .status-bar {
+            height: 24px;
+            background: #f3f2f1;
+            border-top: 1px solid #e1dfdd;
+            display: flex;
+            align-items: center;
+            padding: 0 16px;
+            font-size: 12px;
+            color: #605e5c;
+        }
+        
+        .status-item {
+            margin-right: 16px;
+        }
+        
+        /* Exit button */
+        .exit-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #d83b01;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 5px 10px;
+            cursor: pointer;
+            z-index: 20;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header (green bar) -->
+    <div class="header">
+        <div class="header-left">
+            <div class="excel-icon">X</div>
+            <div class="document-title">Document1.xlsx</div>
+        </div>
+        <div class="header-right">
+            <div class="user-icon">U</div>
+        </div>
+    </div>
+    
+    <!-- Ribbon -->
+    <div class="ribbon">
+        <div class="tabs">
+            <div class="tab active">Home</div>
+            <div class="tab">Insert</div>
+            <div class="tab">Page Layout</div>
+            <div class="tab">Formulas</div>
+            <div class="tab">Data</div>
+            <div class="tab">Review</div>
+            <div class="tab">View</div>
+        </div>
+        <div class="ribbon-content">
+            <div class="ribbon-group">
+                <div class="ribbon-button">B</div>
+                <div class="ribbon-group-title">Clipboard</div>
+            </div>
+            <div class="ribbon-group">
+                <div class="ribbon-button">A</div>
+                <div class="ribbon-group-title">Font</div>
+            </div>
+            <div class="ribbon-group">
+                <div class="ribbon-button">$</div>
+                <div class="ribbon-group-title">Number</div>
+            </div>
+            <div class="ribbon-group">
+                <div class="ribbon-button">=</div>
+                <div class="ribbon-group-title">Formulas</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Spreadsheet -->
+    <div class="spreadsheet">
+        <div class="formula-bar">
+            <div class="formula-label">fx</div>
+            <input type="text" class="formula-input" placeholder="Formula">
+        </div>
+        
+        <div class="spreadsheet-grid">
+            <!-- Column headers A, B, C, etc. -->
+            <div class="column-headers">
+                <div class="column-header">A</div>
+                <div class="column-header">B</div>
+                <div class="column-header">C</div>
+                <div class="column-header">D</div>
+                <div class="column-header">E</div>
+                <div class="column-header">F</div>
+                <div class="column-header">G</div>
+                <div class="column-header">H</div>
+                <div class="column-header">I</div>
+                <div class="column-header">J</div>
+                <div class="column-header">K</div>
+                <div class="column-header">L</div>
+                <div class="column-header">M</div>
+                <div class="column-header">N</div>
+                <div class="column-header">O</div>
+                <div class="column-header">P</div>
+                <div class="column-header">Q</div>
+            </div>
+            
+            <!-- Row headers 1, 2, 3, etc. -->
+            <div class="row-headers">
+                <div class="row-header">1</div>
+                <div class="row-header">2</div>
+                <div class="row-header">3</div>
+                <div class="row-header">4</div>
+                <div class="row-header">5</div>
+                <div class="row-header">6</div>
+                <div class="row-header">7</div>
+                <div class="row-header">8</div>
+                <div class="row-header">9</div>
+                <div class="row-header">10</div>
+                <div class="row-header">11</div>
+                <div class="row-header">12</div>
+                <div class="row-header">13</div>
+                <div class="row-header">14</div>
+                <div class="row-header">15</div>
+                <div class="row-header">16</div>
+                <div class="row-header">17</div>
+                <div class="row-header">18</div>
+                <div class="row-header">19</div>
+                <div class="row-header">20</div>
+            </div>
+            
+            <!-- Grid cells -->
+            <div class="grid-cells" id="grid-cells">
+                <!-- Will be populated by JavaScript -->
+            </div>
+            
+            <!-- Game container in bottom right -->
+            <div class="game-container">
+                <button class="exit-button" onclick="window.location.href = '/'">Exit Office Mode</button>
+                <iframe id="game-frame" src="" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Status bar -->
+    <div class="status-bar">
+        <div class="status-item">Ready</div>
+        <div class="status-item">100%</div>
+    </div>
+    
+    <script>
+        // Create grid cells
+        const gridCells = document.getElementById('grid-cells');
+        for (let i = 1; i <= 20; i++) {
+            const row = document.createElement('div');
+            row.className = 'grid-row';
+            
+            for (let j = 1; j <= 17; j++) {
+                const cell = document.createElement('div');
+                cell.className = 'grid-cell';
+                row.appendChild(cell);
+            }
+            
+            gridCells.appendChild(row);
+        }
+        
+        // Get game URL from query parameter
+        function getGameUrl() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const gameId = urlParams.get('game');
+            
+            // If there's no game parameter, return to home
+            if (!gameId) {
+                window.location.href = '/';
+                return null;
+            }
+            
+            // Import the data.js script
+            const gameData = window.opener ? window.opener.gamesData : null;
+            
+            if (gameData) {
+                // Use the opener's data
+                return findGameUrlById(gameData, gameId);
+            } else {
+                // Fallback: Try to load the script dynamically
+                const script = document.createElement('script');
+                script.src = 'data.js';
+                script.onload = () => {
+                    if (typeof gamesData !== 'undefined') {
+                        const url = findGameUrlById(gamesData, gameId);
+                        if (url) {
+                            document.getElementById('game-frame').src = url;
+                        }
+                    }
+                };
+                document.head.appendChild(script);
+                return null;
+            }
+        }
+        
+        function findGameUrlById(data, gameId) {
+            // Check featured game
+            if (data.featured.title.replace(/\s+/g, '-').toLowerCase() === gameId) {
+                return data.featured.gameUrl;
+            }
+            
+            // Check all categories
+            for (const category of data.categories) {
+                for (const game of category.games) {
+                    if (game.title.replace(/\s+/g, '-').toLowerCase() === gameId) {
+                        return game.gameUrl;
+                    }
+                }
+            }
+            
+            return null;
+        }
+        
+        // Set up fake Excel functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set game URL
+            const gameUrl = getGameUrl();
+            if (gameUrl) {
+                document.getElementById('game-frame').src = gameUrl;
+            }
+            
+            // Make cells selectable
+            const cells = document.querySelectorAll('.grid-cell');
+            cells.forEach(cell => {
+                cell.addEventListener('click', () => {
+                    // Remove selection from all cells
+                    cells.forEach(c => c.style.backgroundColor = '');
+                    
+                    // Select this cell
+                    cell.style.backgroundColor = '#e5f3ff';
+                    cell.style.border = '2px solid #217346';
+                });
+            });
+            
+            // Pressing escape key shows/hides the game
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    const game = document.querySelector('.game-container');
+                    game.style.display = game.style.display === 'none' ? 'block' : 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html> 
