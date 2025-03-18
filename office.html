@@ -316,47 +316,12 @@
         <div class="spreadsheet-grid">
             <!-- Column headers A, B, C, etc. -->
             <div class="column-headers">
-                <div class="column-header">A</div>
-                <div class="column-header">B</div>
-                <div class="column-header">C</div>
-                <div class="column-header">D</div>
-                <div class="column-header">E</div>
-                <div class="column-header">F</div>
-                <div class="column-header">G</div>
-                <div class="column-header">H</div>
-                <div class="column-header">I</div>
-                <div class="column-header">J</div>
-                <div class="column-header">K</div>
-                <div class="column-header">L</div>
-                <div class="column-header">M</div>
-                <div class="column-header">N</div>
-                <div class="column-header">O</div>
-                <div class="column-header">P</div>
-                <div class="column-header">Q</div>
+                <!-- Will be populated by JavaScript -->
             </div>
             
             <!-- Row headers 1, 2, 3, etc. -->
             <div class="row-headers">
-                <div class="row-header">1</div>
-                <div class="row-header">2</div>
-                <div class="row-header">3</div>
-                <div class="row-header">4</div>
-                <div class="row-header">5</div>
-                <div class="row-header">6</div>
-                <div class="row-header">7</div>
-                <div class="row-header">8</div>
-                <div class="row-header">9</div>
-                <div class="row-header">10</div>
-                <div class="row-header">11</div>
-                <div class="row-header">12</div>
-                <div class="row-header">13</div>
-                <div class="row-header">14</div>
-                <div class="row-header">15</div>
-                <div class="row-header">16</div>
-                <div class="row-header">17</div>
-                <div class="row-header">18</div>
-                <div class="row-header">19</div>
-                <div class="row-header">20</div>
+                <!-- Will be populated by JavaScript -->
             </div>
             
             <!-- Grid cells -->
@@ -379,19 +344,190 @@
     </div>
     
     <script>
-        // Create grid cells
+        // Create grid cells with sample data
         const gridCells = document.getElementById('grid-cells');
-        for (let i = 1; i <= 20; i++) {
+        
+        // Sample financial data
+        const sampleData = {
+            'A4': 'Q1 Sales',
+            'B4': 'Q2 Sales',
+            'C4': 'Q3 Sales', 
+            'D4': 'Q4 Sales',
+            'E4': 'Total',
+            'A5': 'North Region',
+            'B5': '45,290',
+            'C5': '52,300',
+            'D5': '38,700',
+            'E5': '42,500',
+            'F5': '=SUM(B5:E5)',
+            'A6': 'South Region',
+            'B6': '38,400',
+            'C6': '42,800',
+            'D6': '51,200',
+            'E6': '48,900',
+            'F6': '=SUM(B6:E6)',
+            'A7': 'East Region',
+            'B7': '52,300',
+            'C7': '58,400',
+            'D7': '62,500',
+            'E7': '64,200',
+            'F7': '=SUM(B7:E7)',
+            'A8': 'West Region',
+            'B8': '41,200',
+            'C8': '38,900',
+            'D8': '42,700',
+            'E8': '51,300',
+            'F8': '=SUM(B8:E8)',
+            'A9': 'Total',
+            'B9': '=SUM(B5:B8)',
+            'C9': '=SUM(C5:C8)',
+            'D9': '=SUM(D5:D8)',
+            'E9': '=SUM(E5:E8)',
+            'F9': '=SUM(F5:F8)',
+            'A12': 'Budget Analysis',
+            'A14': 'Expense Category',
+            'B14': 'Budget',
+            'C14': 'Actual',
+            'D14': 'Variance',
+            'E14': 'Variance %',
+            'A15': 'Marketing',
+            'B15': '120,000',
+            'C15': '118,240',
+            'D15': '=B15-C15',
+            'E15': '=D15/B15',
+            'A16': 'Product Development',
+            'B16': '240,000',
+            'C16': '252,300',
+            'D16': '=B16-C16',
+            'E16': '=D16/B16',
+            'A17': 'Customer Support',
+            'B17': '80,000',
+            'C17': '74,500',
+            'D17': '=B17-C17',
+            'E17': '=D17/B17',
+            'A18': 'Total',
+            'B18': '=SUM(B15:B17)',
+            'C18': '=SUM(C15:C17)',
+            'D18': '=SUM(D15:D17)',
+        };
+        
+        // Calculate how many rows and columns will fill the screen
+        const viewportHeight = window.innerHeight;
+        const viewportWidth = window.innerWidth;
+        const rowHeight = 24; // Height of each row in pixels
+        const colWidth = 64; // Width of each column in pixels
+        
+        // Calculate number of rows needed (minus header, ribbon, formula bar)
+        const headerHeight = 48; // Green bar
+        const ribbonHeight = 92; // Ribbon
+        const formulaBarHeight = 24; // Formula bar
+        const colHeaderHeight = 24; // Column headers
+        const statusBarHeight = 24; // Status bar
+        
+        const availableHeight = viewportHeight - headerHeight - ribbonHeight - formulaBarHeight - colHeaderHeight - statusBarHeight;
+        const rowsToCreate = Math.ceil(availableHeight / rowHeight);
+        
+        // Calculate number of columns needed
+        const rowHeaderWidth = 40; // Width of row headers column
+        const availableWidth = viewportWidth - rowHeaderWidth;
+        const colsToCreate = Math.ceil(availableWidth / colWidth);
+        
+        // Create the dynamically sized grid
+        for (let i = 1; i <= rowsToCreate; i++) {
             const row = document.createElement('div');
             row.className = 'grid-row';
             
-            for (let j = 1; j <= 17; j++) {
+            for (let j = 1; j <= colsToCreate; j++) {
                 const cell = document.createElement('div');
                 cell.className = 'grid-cell';
+                
+                // Convert column number to letter (1 = A, 2 = B, etc.)
+                const colLetter = String.fromCharCode(64 + j);
+                const cellId = colLetter + i;
+                
+                // Add data if this cell has sample data
+                if (sampleData[cellId]) {
+                    cell.textContent = sampleData[cellId];
+                    
+                    // Style formula cells
+                    if (sampleData[cellId].toString().startsWith('=')) {
+                        // Calculate the result of the formula
+                        let formulaResult = '';
+                        if (sampleData[cellId].startsWith('=SUM')) {
+                            // Simple formula calculator for demo
+                            const range = sampleData[cellId].match(/\((.*?)\)/)[1];
+                            const [start, end] = range.split(':');
+                            
+                            // Get column letters and row numbers
+                            const startCol = start.charAt(0);
+                            const startRow = parseInt(start.substring(1));
+                            const endCol = end.charAt(0);
+                            const endRow = parseInt(end.substring(1));
+                            
+                            // Add up the values for this demo (simplified)
+                            let sum = 0;
+                            for (let col = startCol.charCodeAt(0); col <= endCol.charCodeAt(0); col++) {
+                                for (let row = startRow; row <= endRow; row++) {
+                                    const id = String.fromCharCode(col) + row;
+                                    if (sampleData[id] && !sampleData[id].toString().startsWith('=')) {
+                                        // Remove commas and convert to number
+                                        sum += parseFloat(sampleData[id].replace(/,/g, '')) || 0;
+                                    }
+                                }
+                            }
+                            formulaResult = sum.toLocaleString();
+                        } else if (sampleData[cellId].includes('-')) {
+                            // Handle subtraction formula
+                            const parts = sampleData[cellId].substring(1).split('-');
+                            const val1 = parseFloat(sampleData[parts[0]]?.replace(/,/g, '') || 0);
+                            const val2 = parseFloat(sampleData[parts[1]]?.replace(/,/g, '') || 0);
+                            formulaResult = (val1 - val2).toLocaleString();
+                        } else if (sampleData[cellId].includes('/')) {
+                            // Handle division formula
+                            const parts = sampleData[cellId].substring(1).split('/');
+                            const val1 = parseFloat(sampleData[parts[0]]?.replace(/,/g, '') || 0);
+                            const val2 = parseFloat(sampleData[parts[1]]?.replace(/,/g, '') || 0);
+                            formulaResult = (val1 / val2).toLocaleString(undefined, {style: 'percent', minimumFractionDigits: 2});
+                        }
+                        
+                        // For realistic Excel appearance, show the result not the formula
+                        cell.textContent = formulaResult;
+                        cell.title = sampleData[cellId]; // Show formula on hover
+                    }
+                    
+                    // Style cells
+                    if (i === 4 || i === 9 || i === 12 || i === 14 || i === 18) {
+                        cell.style.fontWeight = 'bold';
+                    }
+                    if (i === 9 || i === 18) {
+                        cell.style.borderTop = '1px solid #999';
+                    }
+                }
+                
                 row.appendChild(cell);
             }
             
             gridCells.appendChild(row);
+        }
+        
+        // Update column headers
+        const colHeaders = document.querySelector('.column-headers');
+        colHeaders.innerHTML = '';
+        for (let i = 1; i <= colsToCreate; i++) {
+            const header = document.createElement('div');
+            header.className = 'column-header';
+            header.textContent = String.fromCharCode(64 + i); // A, B, C, etc.
+            colHeaders.appendChild(header);
+        }
+        
+        // Update row headers
+        const rowHeaders = document.querySelector('.row-headers');
+        rowHeaders.innerHTML = '';
+        for (let i = 1; i <= rowsToCreate; i++) {
+            const header = document.createElement('div');
+            header.className = 'row-header';
+            header.textContent = i;
+            rowHeaders.appendChild(header);
         }
         
         // Get game URL from query parameter
@@ -459,11 +595,17 @@
             cells.forEach(cell => {
                 cell.addEventListener('click', () => {
                     // Remove selection from all cells
-                    cells.forEach(c => c.style.backgroundColor = '');
+                    cells.forEach(c => {
+                        c.style.backgroundColor = '';
+                        c.style.border = '1px solid #e1dfdd';
+                    });
                     
                     // Select this cell
                     cell.style.backgroundColor = '#e5f3ff';
                     cell.style.border = '2px solid #217346';
+                    
+                    // Update formula bar with cell contents
+                    document.querySelector('.formula-input').value = cell.title || cell.textContent;
                 });
             });
             
