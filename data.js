@@ -29,6 +29,13 @@ const gamesData = {
                     thumbnailUrl: "https://webgameslist.github.io/vibesail.png",
                     videoUrl: "https://webgameslist.github.io/vids/vibesail.mp4",
                     gameUrl: "https://www.vibesail.com/?utm_source=chrome3Dgames&utm_medium=referral&utm_campaign=FREETRIAL"
+                },
+                {
+                    title: "Trailmarks",
+                    description: "Discover the hidden gems",
+                    thumbnailUrl: "https://webgameslist.github.io/trailmarks.png",
+                    videoUrl: "https://webgameslist.github.io/vids/trailmarks.mp4",
+                    gameUrl: "https://trailmarks.earth/?utm_source=chrome3Dgames&utm_medium=referral&utm_campaign=FREETRIAL"
                 }
             ]
         },
