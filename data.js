@@ -17,13 +17,6 @@ const gamesData = {
                     gameUrl: "http://www.deerhuntroyale.com/?utm_source=chrome3Dgames&utm_medium=referral&utm_campaign=FREETRIAL"
                 },
                 {
-                    title: "Fly Levels",
-                    description: "Flight sim by Pieter Levels (.io)",
-                    thumbnailUrl: "https://webgameslist.github.io/flylevels.png",
-                    videoUrl: "https://webgameslist.github.io/vids/flylevels.mp4",
-                    gameUrl: "https://fly.pieter.com/?utm_source=chrome3Dgames&utm_medium=referral&utm_campaign=FREETRIAL"
-                },
-                {
                     title: "Vibe Sail",
                     description: "Relaxing Online 3D Sailing Simulator",
                     thumbnailUrl: "https://webgameslist.github.io/vibesail.png",
@@ -36,6 +29,13 @@ const gamesData = {
                     thumbnailUrl: "https://webgameslist.github.io/trailmarks.png",
                     videoUrl: "https://webgameslist.github.io/vids/trailmarks.mp4",
                     gameUrl: "https://trailmarks.earth/?utm_source=chrome3Dgames&utm_medium=referral&utm_campaign=FREETRIAL"
+                },
+                {
+                    title: "Fly Levels",
+                    description: "Flight sim by Pieter Levels (.io)",
+                    thumbnailUrl: "https://webgameslist.github.io/flylevels.png",
+                    videoUrl: "https://webgameslist.github.io/vids/flylevels.mp4",
+                    gameUrl: "https://fly.pieter.com/?utm_source=chrome3Dgames&utm_medium=referral&utm_campaign=FREETRIAL"
                 }
             ]
         },
